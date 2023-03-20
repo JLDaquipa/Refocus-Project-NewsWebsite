@@ -15,11 +15,11 @@ document.addEventListener('click',(e) => {
 
 })
 
-document.querySelectorAll('#news-card').forEach(card => { // Hover card listener
+document.querySelectorAll('#news-card').forEach(card => { // Hover cards listener
     document.getElementById("close-btn-" + card.dataset.newsId).style.display = "none";
     
 
-    card.addEventListener('mouseover', () =>{
+    card.addEventListener('mouseover', () => { // Hover in
         document.getElementById("close-btn-" + card.dataset.newsId).style.display = "inline";
         document.getElementById("image-box-" + card.dataset.newsId).style.boxShadow = "inset 0px 100px 100px -30px #192140";
 
@@ -29,7 +29,7 @@ document.querySelectorAll('#news-card').forEach(card => { // Hover card listener
 
     })
 
-    card.addEventListener('mouseout', () =>{
+    card.addEventListener('mouseout', () => { // Hover out
         document.getElementById("close-btn-" + card.dataset.newsId).style.display = "none";
         document.getElementById("image-box-" + card.dataset.newsId).style.boxShadow = "none";
 
@@ -39,8 +39,8 @@ document.querySelectorAll('#news-card').forEach(card => { // Hover card listener
     })
 })
 
-
-function handleLikeClick(newsId){
+// Function that handles events where users click the heart icon on cards
+function handleLikeClick(newsId){ 
 
     const newsObject = newsData.find(news => news.id === parseInt(newsId));
 
@@ -52,31 +52,17 @@ function handleLikeClick(newsId){
 
     newsObject.isLiked = !newsObject.isLiked;
     renderLikes();
-
 }
 
+// Function that handles events where users click the read check icon on cards
 function handleReadClick(newsId){
     const newsObject = newsData.find(news => news.id === parseInt(newsId));
     newsObject.isRead = !newsObject.isRead;
     renderRead();
 }
 
-function renderRead(){
-
-    newsData.forEach(news => {
-        const readIcon = document.getElementById("read-icon-"+news.id);
-
-        if(news.isRead){
-            readIcon.style.display = "inline";
-        }else{
-            readIcon.style.display = "none"
-        }
-    })
-
-}
-
+// Function that renders likes count and heart icon on cards 
 function renderLikes(){
-    
     newsData.forEach(news => {
         const heartIcon = document.getElementById("like-icon-"+news.id);
 
@@ -87,9 +73,22 @@ function renderLikes(){
         }
         document.getElementById("likes-count-" + news.id).textContent = news.likes;
     })
-
 }
 
+// Function that renders check icon on cards that's already been read
+function renderRead(){
+    newsData.forEach(news => {
+        const readIcon = document.getElementById("read-icon-"+news.id);
+
+        if(news.isRead){
+            readIcon.style.display = "inline";
+        }else{
+            readIcon.style.display = "none"
+        }
+    })
+}
+
+// Renders all cards to DOM function
 function renderCards(){
 
     let feedHtml = "";
@@ -128,5 +127,4 @@ function renderCards(){
     document.getElementById('news-container').innerHTML = feedHtml;
     renderRead();
     renderLikes();
-
 }
