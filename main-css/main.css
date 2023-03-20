@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-width: 20rem;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: #192140;
+  padding: 5em 1.5em 1em;
+}
+
+.refocus-logo {
+  width: 8rem;
+}
+
+.nav-menu-bars {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  border: 1px solid #0266FF;
+  border-radius: 50%;
+  padding: 0.75em;
+  font-size: 1.125rem;
+  color: #0266FF;
+}
+
+.nav-menus, .signup-btn, .login-btn {
+  display: none;
+}
+
+.news-section {
+  color: #10131C;
+  padding: 2.5em 1.5em;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.1875rem;
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.125rem, 1fr));
+  justify-content: space-evenly;
+  gap: 1em;
+  margin: 0 auto;
+}
+
+.news-card, .image-box, .image-box img {
+  border-radius: 0.375rem;
+}
+
+.news-card {
+  position: relative;
+  max-height: 18.75rem;
+}
+
+.image-box {
+  width: 100%;
+  height: 80%;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  z-index: -2;
+}
+
+.card-content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0 0 6px 6px;
+  padding: 0.625em 1.25em;
+  background: #F8F9FC;
+}
+
+.card-elem {
+  justify-content: space-between;
+  margin-top: 0.625em;
+  border-top: 0.0625rem solid #9D9DB5;
+  padding-top: 0.625em;
+  font-size: 0.75rem;
+  color: #9D9DB5;
+}
+
+.card-date {
+  border: 0.0625rem solid #9D9DB5;
+  border-radius: 2.5rem;
+  padding: 0.3125em 0.625em;
+}
+
+.heart {
+  gap: 0.3125em;
+}
+
+.heart i {
+  font-size: 1.0625rem;
+}
+
+.read-icon {
+  margin-bottom: 0.5em;
+}
+
+.close-btn {
+  position: absolute;
+  right: 0.625em;
+  top: 0.625em;
+  color: white;
+}
+
+.nav-menu-bars, .close-btn, .read-icon, .heart i {
+  cursor: pointer;
+}
+
+.card-elem, .card-date, .heart {
+  display: flex;
+  align-items: center;
+}
+
+.fa-solid, .heart i:hover, .close-btn:hover, .nav-menus li:hover, .signup-btn:hover, .login-btn:hover {
+  color: #0266FF;
+}
+
+.footer-container, .footer-container ul, .social-icons, .legality-text-mobile {
+  display: flex;
+}
+
+.footer-container {
+  flex-direction: column;
+  gap: 2.5em;
+  font-size: 12px;
+  background-color: #10131C;
+  padding: 2.5em 1.5em;
+  color: #FFFFFF;
+}
+
+.footer-container ul {
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.footer-list-title {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.list {
+  color: #D7F8FF;
+  list-style: none;
+}
+
+.list, .social {
+  cursor: pointer;
+}
+
+.footer-blog-list, .footer-course-list {
+  width: 70%;
+}
+
+.follow-us {
+  margin-bottom: 0.5em;
+  color: #9D9DB5;
+}
+
+.social-icons {
+  max-width: 18.75rem;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #192140;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.footer-legality {
+  opacity: 0.4;
+  font-weight: 200;
+  letter-spacing: -0.03em;
+}
+
+.legality-text-mobile {
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.legality-text-wide {
+  display: none;
+}
+
+@media only screen and (min-width: 51.25rem) {
+  .nav-container {
+    gap: 1.5em;
+    padding: 1em 3.5em;
+  }
+  .nav-menu-bars {
+    display: none;
+  }
+  .nav-menus {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 1em;
+    list-style-type: none;
+  }
+  .nav-menus li:first-child {
+    color: #DCF10D;
+    border-bottom: 1px solid #DCF10D;
+  }
+  .signup-btn, .login-btn {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #9D9DB5;
+    padding: 1em 1.5em;
+    background-color: #192140;
+    border: none;
+    border-radius: 3.125rem;
+  }
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+  }
+  .nav-menus li, .signup-btn, .login-btn {
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .login-btn {
+    color: #0266FF;
+    border: 1px solid #0266FF;
+  }
+  h1 {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+  }
+  .news-section, .footer-container {
+    padding: 3.5rem;
+  }
+  .news-container {
+    max-width: 75rem;
+  }
+  .news-card {
+    height: 18.75em;
+  }
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 30%;
+  }
+  .footer-blog-list, .footer-course-list {
+    width: 100%;
+  }
+  .footer-list-title {
+    margin-bottom: 1em;
+  }
+  .footer-blog-list ul, .footer-course-list ul {
+    gap: 1em;
+  }
+  .footer-social-list {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+  .social-icons {
+    max-width: 100%;
+  }
+  .footer-legality, .legality-text-wide {
+    display: flex;
+  }
+  .footer-legality {
+    align-items: end;
+  }
+  .legality-text-mobile {
+    display: none;
+  }
+  .legality-text-wide {
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+}/*# sourceMappingURL=main.css.map */
